@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company</title>
+</head>
+<body>
+    <% for( let index = 0; index < companies.length; index++ ) { %>
+        <ul>
+            <li>company name: <%= companies[index].companyName %> </li>
+            <li>phone number: <%= companies[index].phoneNumber %> </li>
+            <li>state: <%= companies[index].state %> </li>
+            <li>city: <%= companies[index].city %> </li>
+            <li>registeration number: <%= companies[index].registerNumber %> </li>
+            <li>registeration date: <%= companies[index].persian %> </li>
+        </ul>
+    <% } %>
+</body>
+</html>
