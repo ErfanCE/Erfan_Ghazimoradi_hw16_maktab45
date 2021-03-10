@@ -4,18 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company</title>
+    <title>Companies</title>
+    
+    <link rel="stylesheet" href="stylesheets/company.css">
+
+    <script src="javascripts/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <% for( let index = 0; index < companies.length; index++ ) { %>
+    <!-- modal -->
+    <div id="modal-container">
+        <div class="modal-background">
+            <div class="modal">
+                <form action="/" method="POST" id="createForm">
+                    <input type="text" id="companyName" name="companyName" placeholder="company name">
+                    <input type="text" id="state" name="state" placeholder="company state">
+                    <input type="text" id="city" name="city" placeholder="company city">
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="phone number">
+                    <input type="text" id="registerNumber" name="registerNumber" placeholder="registeration number">
+
+                    <button type="submit">Create</button>
+                </form>
+
+                <p class="result">Result: </p>
+
+                <button class="close">x</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+        <div class="buttons">
+            <div id="two" class="button">new company</div>
+        </div>
+
+        <!-- cards -->
+        <% for( let index = 0; index < companies.length; index++ ) { %>
         <ul>
             <li>company name: <%= companies[index].companyName %> </li>
+            <li>company ID: <%= companies[index].id %> </li>
             <li>phone number: <%= companies[index].phoneNumber %> </li>
             <li>state: <%= companies[index].state %> </li>
             <li>city: <%= companies[index].city %> </li>
             <li>registeration number: <%= companies[index].registerNumber %> </li>
             <li>registeration date: <%= companies[index].persian %> </li>
+
+            <a href="/company/<%= companies[index].id %>" class="read-btn">read</a>
         </ul>
-    <% } %>
+        <% } %>
+    </div>
+
+    <!-- scripts -->
+    <script src="javascripts/mainCompany.js"></script>
+    <script src="javascripts/createCompany.js"></script>
 </body>
 </html>

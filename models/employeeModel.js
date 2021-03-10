@@ -5,17 +5,21 @@ const EmployeeSchema = new mongoose.Schema({
     firstname: {
         type: String,
         required: true,
+        minlength: 2,
         trim: true
     },
     lastname: {
         type: String,
         required: true,
+        minlength: 2,
         trim: true
     },
     nationalNumber: {
-        type: Number,
+        type: String,
         required: true,
         unique: true,
+        minlength: 10,
+        maxlength: 10,
         trim: true
     },
     gender: {
