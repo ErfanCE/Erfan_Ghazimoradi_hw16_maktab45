@@ -1,0 +1,136 @@
+/* Design */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.main {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* background-color: blue; */
+    justify-content: center;
+}
+
+.cards_item {
+    display: flex;
+    padding: 1rem;
+    /* background-color: red; */
+    width: 100%;
+}
+
+@media (min-width: 40rem) {
+    .cards {
+        justify-content: initial;
+    }
+    .cards_item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 56rem) {
+    .cards {
+        justify-content: initial;
+    }
+    .cards_item {
+        width: 33.3333%;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px -14px rgba(30, 44, 21, 0.4);
+    background: linear-gradient(to top left, #dcffd7 , #b2ffbf);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* background-color: yellow; */
+    width: 100%;
+    position: relative;
+}
+
+.card_content {
+    padding: 1rem;
+}
+
+.card_title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+}
+
+.card_text {
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+}
+
+.main-header {
+    /* background-color: #ccc; */
+    overflow: hidden;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.main-header > h1 {
+    float: left;
+}
+
+.main-header > div {
+    float: left;
+}
+
+
+/* edited */
+.information {
+    list-style: none;
+}
+.information .title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.information li {
+    margin-bottom: 5px;
+}
+
+.information li span {
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #222;
+}
+
+.card_btn {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: #2ead58;
+    color: #fdfdfd;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Home</title>
+
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <link rel="stylesheet" href="icons/css/brands.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/modal.css">
+    <link rel="stylesheet" href="stylesheets/navigation.css">
+    <link rel="stylesheet" href="stylesheets/home.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <%- include('./partial/navigation.ejs') %>
+    
+    <!-- modal -->
+    <div id="modal-container">
+        <div class="modal-background">
+            <div class="modal">
+               <button class="close-btn">&#10005;</button>
+
+                <!-- modal alert -->
+                <p class="result">Result: </p>
+
+                <!-- modal form -->
+                <form action="/" method="POST" id="createForm">
+                    <input type="text" id="firstname" name="firstname" placeholder="Employee Firstname">
+                    <input type="text" id="lastname" name="lastname" placeholder="Employee Lastname">
+                    <input type="text" id="gender" name="gender" placeholder="Employee Gender">
+                    <input type="text" id="nationalNumber" name="nationalNumber" placeholder="Natioanal Number">
+                    <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="Date of Birth">
+                    <input type="text" id="isManager" name="isManager" placeholder="Manager Status">
+
+                    <button type="submit">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+        <div class="main">
+            <!-- main header -->
+            <div class="main-header">
+                <h1>Employees</h1>
+                <div class="buttons">
+                    <div id="two" class="button">new employee</div>
+                </div>
+            </div>
+
+            <!-- cards -->
+            <ul class="cards">
+                <% for( let index = 0; index < employees.length; index++ ) { %>
+                <li class="cards_item">
+                    <div class="card">
+                        <div class="card_content">
+                            <ul class="information">
+                                <li class="title"> <%= employees[index].firstname %> <%= employees[index].lastname %>
+                                </li>
+                                <li>gender: <%= employees[index].gender %> </li>
+                                <li>national number: <%= employees[index].nationalNumber %> </li>
+                                <li>date of birth: <%= employees[index].persian %> </li>
+                                <li>age: <%= employees[index].age %> </li>
+                                <li>manager: <%= employees[index].isManager %> </li>
+
+                                <a href="/employee/<%= employees[index].id %>" class="read-btn card_btn">more info</a>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- scripts -->
+    <script src="javascripts/jquery-3.5.1.min.js"></script>
+    <script src="javascripts/navigation.js"></script>
+    <script src="javascripts/modal.js"></script>
+    <script src="javascripts/createEmployee.js"></script>
+</body>
+
+</html>
